@@ -1,0 +1,39 @@
+#apresentation {
+  display: flex;
+  width: 100vw;
+  max-width: 100%;
+  justify-content: center;
+  vertical-align: middle;
+  padding: 10vh 0 2vh 0;
+  margin: 0 auto;
+}
+
+.apresentation-text{
+  width: 80%;
+  min-width: 300px;
+}
+
+.apresentation-text > span {
+  width: 30%;
+  height: 1vh;
+  background-color:#333333;
+  display: block;
+  margin: 4vh 0;
+}
+
+h1, p{
+  font-family: Gotham;
+  text-align: start;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+p {
+  font-weight: normal;
+  font-size: 0.8rem;
+  line-break: normal;
+}
