@@ -7,5 +7,6 @@ import recommendedTowel from './recommended-towel.png';
 import requiredLockerroom from './required-lockerroom.png';
 import requiredMask from './required-mask.png';
 import requiredTowel from './required-towel.png';
+import logo from './logo.svg';
 
-export {forbiddenFountain, forbiddenLockerroom, partialFountain, partialLockerroom, recommendedMask, recommendedTowel, requiredLockerroom, requiredTowel, requiredMask}
+export {forbiddenFountain, forbiddenLockerroom, partialFountain, partialLockerroom, recommendedMask, recommendedTowel, requiredLockerroom, requiredTowel, requiredMask, logo}

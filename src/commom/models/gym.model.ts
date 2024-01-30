@@ -10,7 +10,7 @@ export interface GymModel {
   agendamentos: Agendamento[]
 }
 
-interface Agendamento {
+export interface Agendamento {
   dias_semana: string,
   horario: string,
 }

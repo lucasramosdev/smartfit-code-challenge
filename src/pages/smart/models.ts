@@ -7,6 +7,6 @@ export interface SmartViewModel {
   setTime: React.Dispatch<React.SetStateAction<string[]>>;
   setIncludeClosed: React.Dispatch<React.SetStateAction<boolean>>;
   setGyms: React.Dispatch<React.SetStateAction<GymModel[]>>;
-  reset: () => Promise<void>;
+  reset: () => void;
   getGyms: () => Promise<void>;
 }

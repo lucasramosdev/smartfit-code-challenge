@@ -17,7 +17,6 @@ const useSmartViewModel = () => {
     try{
       let timetoSend = time.length == 0 ? [''] : time; 
       const response = await GymsRepository({time: timetoSend, includeClosed: includeClosed});
-      console.log(response)
       setGyms(response);
     }
     catch(error){

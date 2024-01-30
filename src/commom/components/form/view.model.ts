@@ -1,29 +1,33 @@
-const useFormViewModel = () => {
-  const changeSelection = (changeQuery: ChangeQueryModel, element: HTMLInputElement) => {
-    console.log(element.checked)
-    let newTime = changeQuery.time;
+import { ChangeSelectionModel } from "./model";
 
-    if(!element.checked && changeQuery.time.includes(element.value)){
+const useFormViewModel = () => {
+  const changeSelection = (model: ChangeSelectionModel, element: HTMLInputElement) => {
+    let newTime = model.time;
+
+    if(!element.checked && model.time.includes(element.value)){
       let index = newTime.indexOf(element.value);
       newTime.splice(index, 1);
-      changeQuery.setTime(newTime);
+      model.setTime(newTime);
     }
-    if(element.checked && !changeQuery.time.includes(element.value)){
+    if(element.checked && !model.time.includes(element.value)){
       newTime.push(element.value)
-      changeQuery.setTime(newTime);
+      model.setTime(newTime);
     }
   
   }
   
-  const includeClosed = (changeQuery: ChangeQueryModel, element: HTMLInputElement) => {
-    changeQuery.setIncludeClosed(element.checked);
+  const includeClosed = (setIncludeClosed: React.Dispatch<React.SetStateAction<boolean>>, element: HTMLInputElement) => {
+    console.log(element.checked)
+    setIncludeClosed(element.checked);
   }
 
-  const resetForm = (changeQuery: ChangeQueryModel, form: HTMLFormElement | null) => {
+  const resetForm = (reset: () => void, form: HTMLFormElement | null) => {
     if(form){
-      changeQuery.setTime([]);
-      changeQuery.setIncludeClosed(false);
-      form.reset();
+      reset();
+      const checkboxes: NodeListOf<HTMLInputElement> = form.querySelectorAll('input[type="checkbox"]');
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+      });
     }
   }
   return {
